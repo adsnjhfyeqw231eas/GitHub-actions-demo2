@@ -1,5 +1,6 @@
 name: Manual Workflow
 
+# workflow_dispatch.input allows for type of fields: string,integer,choice,boolean
 on:
   workflow_dispatch:
     inputs:
