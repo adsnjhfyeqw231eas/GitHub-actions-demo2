@@ -11,6 +11,16 @@ on:
         description: 'Age'
         type: number
         required: true
+      sex:
+        description: Sex
+        type: choice
+        options:
+          - Male
+          - Female
+          - Trans
+      Married:
+        description: 'is Married?'
+        type: boolean
 
 jobs:
   manual:
@@ -19,6 +29,9 @@ jobs:
     steps:
       - name: Greetings
         run: echo "${{ inputs.name }}"
-
       - name: Age
         run: echo ${{ inputs.age }}
+      - name: Sex
+        run: echo ${{ inputs.sex }}
+      - name: Married
+        run: echo ${{ inputs.married }}
