@@ -1,0 +1,16 @@
+Name: Manual Workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: 'Name'
+        type: string
+
+jobs:
+  manual:
+    runs-on: ubuntu-slim
+
+    steps:
+      - name: Greetings
+        run: echo "Hello World!"
