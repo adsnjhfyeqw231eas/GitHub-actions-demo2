@@ -1,10 +1,10 @@
-Name: Manual Workflow
+name: Manual Workflow
 
 on:
   workflow_dispatch:
     inputs:
       name:
-        description: test manual workflow
+        description: 'Name'
         type: string
         default: 'test'
 
