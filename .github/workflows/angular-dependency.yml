@@ -4,7 +4,7 @@ on:
   push:
     branches: [ main ]
 
-jobs:   # 👈 ROOT LEVEL (no extra spaces)
+jobs:
 
   build-angular:
     runs-on: ubuntu-latest
@@ -39,7 +39,7 @@ jobs:   # 👈 ROOT LEVEL (no extra spaces)
       - build-angular
       - job2
 
-    #if: always()
+    if: always()
 
     steps:
       - run: echo "deploy running"
