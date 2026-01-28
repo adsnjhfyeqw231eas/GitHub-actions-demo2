@@ -1,4 +1,4 @@
-name: Build Angular App
+name: Angular Dependency App
 
 on:
   push:
@@ -33,11 +33,13 @@ jobs:   # 👈 ROOT LEVEL (no extra spaces)
   deploy-angular:
     runs-on: ubuntu-latest
 
+    # needs: ['build-angular','job2']
+
     needs:
       - build-angular
       - job2
 
-    if: always()
+    #if: always()
 
     steps:
       - run: echo "deploy running"
