@@ -11,9 +11,13 @@ jobs:
     steps:
       - name: set output
         id: set-output
-        shell: bash
-        run: echo "age=23" >> $GITHUB_OUTPUT
+        #shell: bash
+        run: |
+          echo "name=InterviewPro" >> $GITHUB_OUTPUT
+          echo "age=23" >> $GITHUB_OUTPUT
         
       - name: access output
         id: get-output
-        run: echo ${{ steps.set-output.outputs.age }}
+        run: |
+          echo "The value of output age is: ${{ steps.set-output.outputs.age }}"
+          echo "The value of output name is: ${{ steps.set-output.outputs.name }}"
