@@ -27,4 +27,6 @@ jobs:
         run: |
           echo "The value of output age is: ${{ steps.set-output.outputs.age }}"
           echo "The value of output name is: ${{ steps.set-output.outputs.name }}"
+      - name: access output
+        run: |
           echo "The value of output name is: ${{ steps.set-output2.outputs.salary }}"
