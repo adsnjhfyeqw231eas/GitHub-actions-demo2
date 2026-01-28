@@ -18,15 +18,14 @@ jobs:
         
       - name: set output2
         id: set-output2
-        #shell: bash
         run: |
           echo "salary=10000" >> $GITHUB_OUTPUT
         
       - name: access output
-        #id: get-output
         run: |
           echo "The value of output age is: ${{ steps.set-output.outputs.age }}"
           echo "The value of output name is: ${{ steps.set-output.outputs.name }}"
-      - name: access output
+      
+      - name: access output2
         run: |
           echo "The value of output name is: ${{ steps.set-output2.outputs.salary }}"
