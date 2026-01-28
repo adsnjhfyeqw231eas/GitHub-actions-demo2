@@ -37,6 +37,9 @@ jobs:
   # job 2
   job2:
     runs-on: ubuntu-latest
+    steps:
+      - name: Test
+        run: echo "test step by job2"
 
   # job 3
   deploy-angular:
