@@ -34,11 +34,11 @@ jobs:
           # Required field.
           path: dist
 
-    # job 2
-    deploy-angular:
-      runs-on: ubuntu-latest
+  # job 2
+  deploy-angular:
+    runs-on: ubuntu-latest
 
-      steps:
-        - name: Test
-          run: echo "Test step"
+    steps:
+      - name: Test
+        run: echo "Test step"
           
