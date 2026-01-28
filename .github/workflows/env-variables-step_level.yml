@@ -14,7 +14,7 @@ jobs:
           CHANNEL_NAME: InterviewPro
         run: echo "Hello, ${{ env.CHANNEL_NAME }}!"
         
-      - name: Get comments on $CHANNEL_NAME  #${{ env.CHANNEL_NAME }}
+      - name: Get comments on ${{ env.CHANNEL_NAME }} #$CHANNEL_NAME won't work because it is not bash, only the code within is bash
         shell: bash
         run: |
           #HTTPS /api/comments
