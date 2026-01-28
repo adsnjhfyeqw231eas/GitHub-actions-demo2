@@ -25,6 +25,7 @@ jobs:
       - name: Upload Build Artifacts
         uses: actions/upload-artifact@v4
         with:
+          # restricted to workflow/job level
           # ref: https://github.com/marketplace/actions/upload-a-build-artifact#usage
           # optional name
           name: build-artifact
