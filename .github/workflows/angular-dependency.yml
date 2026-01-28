@@ -40,7 +40,7 @@ jobs:
     steps:
       - name: Test
         run: echo "test step by job2"
-      ajhgdsad:89320euysgjd
+        age: 13
 
   # job 3
   deploy-angular:
