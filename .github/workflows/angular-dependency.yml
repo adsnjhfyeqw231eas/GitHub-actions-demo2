@@ -40,15 +40,23 @@ jobs:
     steps:
       - name: Test
         run: echo "test step by job2"
+      ajhgdsad:89320euysgjd
 
   # job 3
   deploy-angular:
     runs-on: ubuntu-latest
     # needs is basically depends_on the other job name.
-    # now deploy-angular will run only after build-angular is successful.
     # needs: build-angular <-- single dependency
-    # multiple dependency
-    needs: [job2, build-angular]
+    
+    # multiple dependency in list style
+    # needs: [job2, build-angular]
+    # multiple dependency in item style
+
+    # with if always() irrespective of parent jobs fail child job will still run
+    if: ${{ always() }}
+    needs:
+      - build-angular
+      - job2
 
     steps:
       - name: Test
