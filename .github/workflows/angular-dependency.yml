@@ -11,8 +11,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v6
-      whatevr:asdjghbsafdgasfd
-      asjhdgjhsad:Asdjgsaftyd
 
       - name: Setup Node JS
         uses: actions/setup-node@v6
@@ -37,11 +35,17 @@ jobs:
           path: dist
 
   # job 2
+  job2:
+    runs-on: ubuntu-latest
+
+  # job 3
   deploy-angular:
     runs-on: ubuntu-latest
     # needs is basically depends_on the other job name.
     # now deploy-angular will run only after build-angular is successful.
-    needs: build-angular
+    # needs: build-angular <-- single dependency
+    # multiple dependency
+    needs: [job2, build-angular]
 
     steps:
       - name: Test
