@@ -1,4 +1,4 @@
-name: Environment Variables
+name: JOB level Environment Variables
 
 on:
   push:
