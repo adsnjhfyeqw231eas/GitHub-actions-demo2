@@ -1,0 +1,24 @@
+name: STEP level Environment Variables
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+      
+    steps:
+      - name: Greetings
+        env:
+          CHANNEL_NAME: InterviewPro
+        run: echo "Hello, ${{ env.CHANNEL_NAME }}!"
+        
+      - name: Get comments on ${{ env.CHANNEL_NAME }}
+        run: |
+          #HTTPS /api/comments
+          echo "Awesome!!"
+          echo "Great content"
+          echo "Thanks you for sharing."
+
+#env vars in workflow level is accessible in workflow>multiple jobs>step level
