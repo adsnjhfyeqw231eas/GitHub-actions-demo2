@@ -21,3 +21,14 @@ jobs:
 
       - name: Build 
         run: npm run build
+
+      - name: Upload Build Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          # ref: https://github.com/marketplace/actions/upload-a-build-artifact#usage
+          # optional name
+          name: build-artifact
+          # A file, directory or wildcard pattern that describes what to upload
+          # Required field.
+          path: dist
+          
