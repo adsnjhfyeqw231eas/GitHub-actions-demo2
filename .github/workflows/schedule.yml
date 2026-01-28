@@ -2,9 +2,9 @@ name: Scheduled Workflow
 
 on:
   workflow_dispatch:
-    schedule:
-      # scheduled every 10 minutes every day
-      - cron: '*/10 * * * *'
+  schedule:
+    # scheduled every 10 minutes if */10
+    - cron: '*/1 * * * *'
 
 jobs:
   demo:
