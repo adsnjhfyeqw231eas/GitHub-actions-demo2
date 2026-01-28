@@ -3,7 +3,7 @@ name: Scheduled Workflow
 on:
   schedule:
     # scheduled every 10 minutes if */10
-    - cron: '*/1 * * * *'
+    - cron: '*/10 * * * *'
   # optional: Allow manual trigger also
   workflow_dispatch:
 
