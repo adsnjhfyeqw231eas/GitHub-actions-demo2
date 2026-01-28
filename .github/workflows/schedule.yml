@@ -1,10 +1,11 @@
 name: Scheduled Workflow
 
 on:
-  workflow_dispatch:
   schedule:
     # scheduled every 10 minutes if */10
     - cron: '*/1 * * * *'
+  # optional: Allow manual trigger also
+  workflow_dispatch:
 
 jobs:
   demo:
