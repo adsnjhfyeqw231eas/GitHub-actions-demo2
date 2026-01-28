@@ -10,6 +10,7 @@ jobs:
     # for job output, use outputs:
     outputs:
       age: 23
+      # job1 can access its own step outputs
       job1_name: "${{ steps.set-output.outputs.name }}"
       
     steps:
@@ -24,6 +25,10 @@ jobs:
 
   job2:
     runs-on: ubuntu-latest
+    # create dependency so that job2 can access job1 outputs
+    needs: job1 
     steps:
       - name: access output
-        run: echo "The value of output name is: ${{ steps.set-output.outputs.name }}"
+        run: |
+          echo "The value of output name is: ${{ needs.job1.outputs.job1_name }}"
+          echo "The value of output name is: ${{ needs.job1.outputs.age }}"
