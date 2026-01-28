@@ -14,7 +14,8 @@ jobs:
           CHANNEL_NAME: InterviewPro
         run: echo "Hello, ${{ env.CHANNEL_NAME }}!"
         
-      - name: Get comments on ${{ env.CHANNEL_NAME }}
+      - name: Get comments on $CHANNEL_NAME  #${{ env.CHANNEL_NAME }}
+        shell: bash
         run: |
           #HTTPS /api/comments
           echo "Awesome!!"
