@@ -28,4 +28,4 @@ jobs:
       
       - name: access output2
         run: |
-          echo "The value of output name is: ${{ steps.set-output2.outputs.salary }}"
+          echo "The value of output salary is: ${{ steps.set-output2.outputs.salary }}"
