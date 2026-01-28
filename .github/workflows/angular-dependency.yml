@@ -1,0 +1,44 @@
+name: Build Angular App
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  # job 1
+  build-angular:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Setup Node JS
+        uses: actions/setup-node@v6
+        with:
+          node-version: 18.x
+        
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build 
+        run: npm run build
+
+      - name: Upload Build Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          # restricted to workflow/job level
+          # ref: https://github.com/marketplace/actions/upload-a-build-artifact#usage
+          # optional name
+          name: build-artifact
+          # A file, directory or wildcard pattern that describes what to upload
+          # Required field.
+          path: dist
+
+    # job 2
+    deploy-angular:
+      runs-on: ubuntu-latest
+
+      steps:
+        - name: Test
+          run: echo "Test step"
+          
