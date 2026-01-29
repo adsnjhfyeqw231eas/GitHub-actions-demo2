@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Greetings
-        run: echo "Hello, ${{ CHANNEL_NAME }}"
+        run: echo "Hello, ${{ env.CHANNEL_NAME }}"
 
       - name: Access repository variable
         run: echo "env var username:- ${{ vars.USERNAME }}!"
