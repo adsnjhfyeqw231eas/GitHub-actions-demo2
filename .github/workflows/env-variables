@@ -1,0 +1,24 @@
+name: Workflows level Environment Variables 
+# ref: https://www.youtube.com/watch?v=hIsvtX2G-4Q&list=PLBrle6N86WsSOfx9CuWhJTji15KTSD41m&index=11 
+on:
+  push:
+    branches: [main]
+    
+env:
+  CHANNEL_NAME: InterviewPro
+  VIEWER_COUNT: 10000
+
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Greetings
+        run: echo "Hello, ${{ CHANNEL_NAME }}"
+
+      - name: Access repository variable
+        run: echo "env var username: ${{ vars.USERNAME }}!"
+
+      - name: Access repository secret
+        run: |
+          echo "secret username: "
+          echo ${{ secrets.USERNAME }}
