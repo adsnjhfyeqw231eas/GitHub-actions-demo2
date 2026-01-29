@@ -20,5 +20,5 @@ jobs:
 
       - name: Access repository secret
         run: |
-          echo "secret username:- "
-          echo ${{ secrets.USERNAME }}
+          echo "secret password:- "
+          echo ${{ secrets.PASSWORD }}
