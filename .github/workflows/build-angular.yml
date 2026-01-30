@@ -33,3 +33,16 @@ jobs:
           # Required field.
           path: dist
           
+  deploy-angular:
+    runs-on: ubuntu-latest
+    needs: build-angular
+    
+    steps:
+      - name: Download artifact
+        uses: actions/ownload-artifact@v4
+        with: 
+          name: build-artifact
+          path: artifact
+
+      - name: Display structure of destination folders
+        run: ls -R artifact
