@@ -39,7 +39,7 @@ jobs:
     
     steps:
       - name: Download artifact
-        uses: actions/ownload-artifact@v4
+        uses: actions/download-artifact@v4
         with: 
           name: build-artifact
           path: artifact
